@@ -9,7 +9,7 @@ pygame.init()
 
 # set up the drawing window
 
-screen = pygame.display.set_mode([500, 500])
+screen = pygame.display.set_mode([600, 600])
 
 # run until the user asks to quit
 def main():
@@ -24,7 +24,7 @@ def main():
         screen.fill((128, 128, 128))
 
         # draw a solid blue circle in the center
-        pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+        pygame.draw.circle(screen, (0, 0, 255), (300, 300), 120)
 
         # flip the display
         pygame.display.flip()
