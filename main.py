@@ -8,8 +8,29 @@ import pygame
 pygame.init()
 
 # set up the drawing window
+Width, Height = 600, 600
+screen = pygame.display.set_mode([Width, Height])
 
-screen = pygame.display.set_mode([600, 600])
+#title of the gaame for screen 
+pygame.display.set_caption("Checkers+")  
+
+# title for display 
+
+game_title = "Checkers+"
+message = " Coming Soon!"
+
+title_font = pygame.font.Font(None, 64)
+message_font = pygame.font.Font(None, 32)
+
+
+title_text = title_font.render(game_title, True, (255, 255, 255))
+title_rect = title_text.get_rect(center=(Width // 2, 50))
+
+#quick message !!!
+message_text = message_font.render(message, True, (255, 255, 255))
+
+message_rect = message_text.get_rect(center=(Width // 2, 120))
+
 
 # run until the user asks to quit
 def main():
@@ -21,10 +42,12 @@ def main():
                 running = False
 
         # fill the background with grey
-        screen.fill((128, 128, 128))
-
-        # draw a solid blue circle in the center
-        pygame.draw.circle(screen, (0, 0, 255), (300, 300), 120)
+        screen.fill((0, 0, 0))
+        
+        
+        #tile the background
+        screen.blit(title_text, title_rect)
+        screen.blit(message_text, message_rect)
 
         # flip the display
         pygame.display.flip()
